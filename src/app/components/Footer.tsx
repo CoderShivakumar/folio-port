@@ -38,7 +38,7 @@ export function Footer() {
           <div className="flex items-center justify-center gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-8 md:mb-10">
             <motion.a
               whileHover={{ scale: 1.1, y: -4 }}
-              href="https://github.com"
+              href="https://github.com/CoderShivakumar"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 
@@ -51,7 +51,7 @@ export function Footer() {
 
             <motion.a
               whileHover={{ scale: 1.1, y: -4 }}
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/shivakumar-rameshkumar"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 
@@ -64,7 +64,7 @@ export function Footer() {
 
             <motion.a
               whileHover={{ scale: 1.1, y: -4 }}
-              href="mailto:shivakumar@example.com"
+              href="mailto:shivakumarramesh972@gmail.com"
               className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 
               rounded-full bg-[hsl(230,50%,35%)]/50 backdrop-blur-sm 
               flex items-center justify-center border-2 border-[hsl(45,95%,55%)]/30 
