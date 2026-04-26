@@ -16,7 +16,10 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     const element = document.querySelector(href);
@@ -27,6 +30,7 @@ export function Navbar() {
 
   return (
     <>
+      {/* Navbar */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -47,7 +51,7 @@ export function Navbar() {
               className={`text-2xl sm:text-3xl font-serif tracking-wide transition-colors ${
                 isScrolled
                   ? 'text-[hsl(45,95%,55%)]'
-                  : 'text-[hsl(230,50%,20%)]'
+                  : 'text-[hsl(45,40%,95%)]'
               }`}
             >
               SR
@@ -64,7 +68,7 @@ export function Navbar() {
                   className={`px-4 py-2 rounded-full transition-all duration-300 font-medium ${
                     isScrolled
                       ? 'text-[hsl(45,40%,95%)] hover:bg-[hsl(45,95%,55%)]/20 hover:text-[hsl(45,95%,55%)]'
-                      : 'text-[hsl(230,30%,20%)] hover:bg-[hsl(230,50%,30%)]/10 hover:text-[hsl(230,50%,30%)]'
+                      : 'text-[hsl(45,40%,95%)] hover:bg-white/10 hover:text-[hsl(45,95%,55%)]'
                   }`}
                 >
                   {link.label}
@@ -78,7 +82,7 @@ export function Navbar() {
               className={`md:hidden p-2 rounded-lg transition-colors ${
                 isScrolled
                   ? 'text-[hsl(45,40%,95%)] hover:bg-[hsl(45,95%,55%)]/20'
-                  : 'text-[hsl(230,30%,20%)] hover:bg-[hsl(230,50%,30%)]/10'
+                  : 'text-[hsl(45,40%,95%)] hover:bg-white/10'
               }`}
             >
               {isMobileMenuOpen ? (
@@ -96,7 +100,6 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
           className="fixed top-[70px] sm:top-[80px] left-0 right-0 z-40 
           bg-[hsl(230,50%,15%)]/98 backdrop-blur-xl 
           border-b border-[hsl(45,95%,55%)]/30 shadow-2xl md:hidden"
@@ -110,7 +113,7 @@ export function Navbar() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="block px-4 py-3 text-[hsl(45,40%,95%)] hover:bg-[hsl(45,95%,55%)]/20 hover:text-[hsl(45,95%,55%)] rounded-xl transition-all"
+                className="block px-4 py-3 text-[hsl(45,40%,95%)] hover:bg-white/10 hover:text-[hsl(45,95%,55%)] rounded-xl transition-all"
               >
                 {link.label}
               </motion.a>
