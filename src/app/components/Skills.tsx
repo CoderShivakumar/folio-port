@@ -3,21 +3,42 @@ import {
   Database,
   Server,
   Workflow,
-  Code,
-  Coffee,
   Layout,
   GitBranch,
   Cpu,
 } from 'lucide-react';
+
+import {
+  FaJava,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+} from 'react-icons/fa';
+
+import {
+  SiMongodb,
+  SiMysql,
+  SiExpress,
+  SiJavascript,
+} from 'react-icons/si';
+
 import { skills } from '../../data/portfolio-data';
 
+// 🔥 Strong branding icon map
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  react: Code,
+  java: FaJava,
+  react: FaReact,
+  node: FaNodeJs,
+  mongodb: SiMongodb,
+  mysql: SiMysql,
+  express: SiExpress,
+  javascript: SiJavascript,
+  git: FaGitAlt,
+
+  // fallback system icons
   database: Database,
   server: Server,
   workflow: Workflow,
-  code: Code,
-  coffee: Coffee,
   layout: Layout,
   'git-branch': GitBranch,
   cpu: Cpu,
@@ -29,6 +50,7 @@ export function Skills() {
       id="skills"
       className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-[hsl(230,50%,25%)] via-[hsl(230,45%,28%)] to-[hsl(230,50%,22%)] relative overflow-hidden"
     >
+      {/* Background Glow */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 right-0 
         w-[250px] sm:w-[400px] md:w-[500px] 
@@ -73,7 +95,7 @@ export function Skills() {
           {/* Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {skills.map((skill, index) => {
-              const Icon = iconMap[skill.icon] || Code;
+              const Icon = iconMap[skill.icon] || Cpu;
 
               return (
                 <motion.div
@@ -81,8 +103,12 @@ export function Skills() {
                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
-                  whileHover={{ y: -6, scale: 1.04 }}
+                  transition={{
+                    delay: index * 0.08,
+                    duration: 0.5,
+                    ease: 'easeOut',
+                  }}
+                  whileHover={{ y: -6, scale: 1.05 }}
                   className="group relative flex flex-col items-center justify-center 
                   p-4 sm:p-6 md:p-8 
                   bg-gradient-to-br from-[hsl(230,50%,35%)]/60 to-[hsl(230,50%,30%)]/40 
@@ -90,10 +116,13 @@ export function Skills() {
                   hover:border-[hsl(45,95%,55%)]/60 transition-all duration-300 
                   shadow-lg hover:shadow-[hsl(45,95%,55%)]/20 hover:shadow-2xl"
                 >
+                  {/* Glow Hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[hsl(45,95%,55%)]/0 to-[hsl(45,95%,55%)]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
+                  {/* Icon */}
                   <Icon className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-[hsl(45,95%,55%)] mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300" />
 
+                  {/* Name */}
                   <p className="text-[hsl(45,40%,95%)] text-xs sm:text-sm md:text-base text-center relative z-10">
                     {skill.name}
                   </p>
